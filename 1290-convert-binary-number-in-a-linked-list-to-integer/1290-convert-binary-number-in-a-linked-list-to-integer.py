@@ -6,9 +6,13 @@
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
         res=0
+        binary=[]
         while head is not None:
-            res=res*2+head.val
+            binary.append(head.val)
             head=head.next
+        binary=binary[::-1]
+        for i in range(len(binary)):
+            res+= int(binary[i]) * pow(2,i)
         return res
 
 
